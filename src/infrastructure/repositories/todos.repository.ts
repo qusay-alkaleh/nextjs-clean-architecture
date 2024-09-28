@@ -23,7 +23,7 @@ export class TodosRepository implements ITodosRepository {
               op: "db.query",
               attributes: { "db.system": "sqlite" },
             },
-            () => query.execute(),
+            () => query.execute()
           );
 
           if (created) {
@@ -35,7 +35,7 @@ export class TodosRepository implements ITodosRepository {
           captureException(err, { data: todo });
           throw err; // TODO: convert to Entities error
         }
-      },
+      }
     );
   }
 
@@ -52,7 +52,7 @@ export class TodosRepository implements ITodosRepository {
             op: "db.query",
             attributes: { "db.system": "sqlite" },
           },
-          () => query.execute(),
+          () => query.execute()
         );
 
         return todo;
@@ -78,14 +78,14 @@ export class TodosRepository implements ITodosRepository {
               op: "db.query",
               attributes: { "db.system": "sqlite" },
             },
-            () => query.execute(),
+            () => query.execute()
           );
           return usersTodos;
         } catch (err) {
           captureException(err);
           throw err; // TODO: convert to Entities error
         }
-      },
+      }
     );
   }
 
@@ -106,14 +106,14 @@ export class TodosRepository implements ITodosRepository {
               op: "db.query",
               attributes: { "db.system": "sqlite" },
             },
-            () => query.execute(),
+            () => query.execute()
           );
           return updated;
         } catch (err) {
           captureException(err);
           throw err; // TODO: convert to Entities error
         }
-      },
+      }
     );
   }
 }

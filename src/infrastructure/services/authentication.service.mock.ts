@@ -15,13 +15,13 @@ export class MockAuthenticationService implements IAuthenticationService {
 
   constructor(
     @inject(DI_SYMBOLS.IUsersRepository)
-    private _usersRepository: IUsersRepository,
+    private _usersRepository: IUsersRepository
   ) {
     this._sessions = {};
   }
 
   async validateSession(
-    sessionId: string,
+    sessionId: string
   ): Promise<{ user: User; session: Session }> {
     const result = this._sessions[sessionId] ?? { user: null, session: null };
 
@@ -35,7 +35,7 @@ export class MockAuthenticationService implements IAuthenticationService {
   }
 
   async createSession(
-    user: User,
+    user: User
   ): Promise<{ session: Session; cookie: Cookie }> {
     const luciaSession: Session = {
       id: "random_session_id",

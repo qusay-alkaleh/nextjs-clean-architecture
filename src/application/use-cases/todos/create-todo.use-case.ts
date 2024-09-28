@@ -1,13 +1,12 @@
-import { startSpan } from "@sentry/nextjs";
-
 import { getInjection } from "@/di/container";
-import type { Todo } from "@/src/entities/models/todo";
+import { Todo } from "@/src/entities/models/todo";
+import { startSpan } from "@sentry/nextjs";
 
 export function createTodoUseCase(
   input: {
     todo: string;
   },
-  userId: string,
+  userId: string
 ): Promise<Todo> {
   return startSpan(
     { name: "createTodo Use Case", op: "function" },
@@ -24,6 +23,6 @@ export function createTodoUseCase(
       });
 
       return newTodo;
-    },
+    }
   );
 }

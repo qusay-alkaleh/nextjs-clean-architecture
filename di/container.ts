@@ -27,7 +27,7 @@ if (process.env.NODE_ENV !== "test") {
 }
 
 export function getInjection<K extends keyof typeof DI_SYMBOLS>(
-  symbol: K,
+  symbol: K
 ): DI_RETURN_TYPES[K] {
   return startSpan(
     {
@@ -35,7 +35,7 @@ export function getInjection<K extends keyof typeof DI_SYMBOLS>(
       op: "function",
       attributes: { symbol: symbol.toString() },
     },
-    () => ApplicationContainer.get(DI_SYMBOLS[symbol]),
+    () => ApplicationContainer.get(DI_SYMBOLS[symbol])
   );
 }
 

@@ -48,7 +48,7 @@ export default async function Home() {
 
   let todos: Todo[];
   try {
-    todos = await getTodos(sessionId);
+    todos = [];
   } catch (err) {
     throw err;
   }
